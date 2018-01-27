@@ -23,7 +23,7 @@ LoginButton.propTypes = {
 };
 
 LoginButton.defaultProps = {
-  children: [],
+  children: 'Logg inn',
 };
 
 export default LoginButton;
