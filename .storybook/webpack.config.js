@@ -1,6 +1,65 @@
-// Override (extend) default Storybook webpack config to add support for
-// * CSS Modules
-// * File loaders (for images/icons)
-// Issue: https://github.com/storybooks/storybook/issues/270#issuecomment-318101549
+const webpack = require('webpack');
 
-module.exports = require('../webpack.config');
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)(\?[a-z0-9=&.]+)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|gif|jpe?g)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {loader: 'style-loader'},
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ]
+      },
+      {
+        test: /\.svg$/,
+        loaders: [
+          {
+            loader: 'svg-react-loader',
+          }
+        ]
+      }
+    ],
+  },
+}
