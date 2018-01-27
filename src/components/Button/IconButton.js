@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import Button from './Button';
 
@@ -44,5 +45,21 @@ class IconButton extends Button {
     );
   }
 }
+
+IconButton.propTypes = {
+  children: PropTypes.node,
+  iconLeft: PropTypes.string,
+  iconRight: PropTypes.string,
+  hoverIconLeft: PropTypes.string,
+  hoverIconRight: PropTypes.string,
+};
+
+IconButton.defaultProps = {
+  children: [],
+  iconLeft: '',
+  iconRight: '',
+  hoverIconLeft: '',
+  hoverIconRight: '',
+};
 
 export default IconButton;

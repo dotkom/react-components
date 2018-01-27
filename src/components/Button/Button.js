@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import _s from './Button.css';
 
@@ -30,5 +31,13 @@ class Button extends React.Component {
     );
   }
 }
+
+Button.propTypes = {
+  children: PropTypes.node,
+};
+
+Button.defaultProps = {
+  children: [],
+};
 
 export default Button;

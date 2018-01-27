@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import IconButton from './IconButton';
 
@@ -14,6 +15,14 @@ function LoginButton(props) {
       hoverIconLeft={onlineIcon}
     >{children}</IconButton>
   );
+}
+
+LoginButton.propTypes = {
+  children: PropTypes.node,
+}
+
+LoginButton.defaultProps = {
+  children: [],
 }
 
 export default LoginButton;
