@@ -14,7 +14,7 @@ class Button extends React.Component {
   }
 
   render() {
-    const { children, text, ...rest } = this.props;
+    const { children, ...rest } = this.props;
     
     return (
       <button 
@@ -24,7 +24,6 @@ class Button extends React.Component {
         onMouseLeave={(...a) => this._mouseLeave(...a)}
       >
         <div className={_s.buttonContent}>
-          { text }
           { children }
         </div>
       </button>

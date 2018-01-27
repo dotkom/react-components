@@ -24,7 +24,7 @@ class IconButton extends Button {
   }
 
   render(){
-    const { children, text, iconLeft, iconRight, hoverIconLeft, hoverIconRight, ...rest } = this.props;
+    const { children, iconLeft, iconRight, hoverIconLeft, hoverIconRight, ...rest } = this.props;
     
     const icLeft = this.state.hover ? hoverIconLeft || iconLeft : iconLeft || hoverIconLeft;
     const icRight = this.state.hover ? hoverIconRight || iconRight : iconRight || hoverIconRight;
@@ -37,7 +37,6 @@ class IconButton extends Button {
       >
         <div className={_s.buttonContent}>
           { icLeft && <img className={_s.iconLeft} src={icLeft} alt="Ikon" /> }
-          { text }
           { children }
           { icRight && <img className={_s.iconRight} src={icRight} alt="Ikon" /> }
         </div>
