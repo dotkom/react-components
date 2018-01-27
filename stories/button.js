@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Button from '../src/components/Button';
-import { IconButton, LoginButton } from '../src/components/Button';
+import { Button, IconButton, LoginButton } from '../';
 
 import onlineLogoWhite from '../src/assets/images/online-icon-white.png';
 import onlineLogo from '../src/assets/images/online-icon.png';
