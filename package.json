@@ -10,7 +10,8 @@
     "build": "webpack",
     "dev": "webpack-dev-server --inline --hot",
     "lint": "eslint src",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -38,6 +39,7 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "@storybook/react": "^3.3.11",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-react": "^7.6.0",
