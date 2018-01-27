@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './Button';
@@ -6,30 +6,32 @@ import Button from './Button';
 import _s from './IconButton.css';
 
 class IconButton extends Button {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      hover: false
-    }
+      hover: false,
+    };
   }
 
   componentDidMount() {
     const { hoverIconLeft, hoverIconRight } = this.props;
     // Preload hover icons
-    if(hoverIconLeft) {
+    if (hoverIconLeft) {
       new Image().src = hoverIconLeft;
     }
-    if(hoverIconRight) {
+    if (hoverIconRight) {
       new Image().src = hoverIconRight;
     }
   }
 
-  render(){
-    const { children, iconLeft, iconRight, hoverIconLeft, hoverIconRight, ...rest } = this.props;
-    
+  render() {
+    const {
+      children, iconLeft, iconRight, hoverIconLeft, hoverIconRight, ...rest
+    } = this.props;
+
     const icLeft = this.state.hover ? hoverIconLeft || iconLeft : iconLeft || hoverIconLeft;
     const icRight = this.state.hover ? hoverIconRight || iconRight : iconRight || hoverIconRight;
-    
+
     return (
       <Button
         {...rest}
