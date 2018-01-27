@@ -6,15 +6,13 @@ import onlineIcon from '../../assets/images/online-icon.png';
 import onlineIconWhite from '../../assets/images/online-icon-white.png';
 
 function LoginButton(props) {
-  const { displayText, handleLogin, ...rest } = props;
+  const { children, ...rest } = props;
   return (
     <IconButton
       {...rest}
-      text={displayText || "Logg inn"}
       iconLeft={onlineIconWhite}
       hoverIconLeft={onlineIcon}
-      onClick={() => handleLogin()}
-    />
+    >{children}</IconButton>
   );
 }
 
