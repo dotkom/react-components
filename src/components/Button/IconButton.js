@@ -5,7 +5,7 @@ import Button from './Button';
 
 import _s from './IconButton.css';
 
-class IconButton extends Button {
+class IconButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
