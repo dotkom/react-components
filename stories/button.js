@@ -21,8 +21,9 @@ storiesOf('Button', module)
     <IconButton
       iconRight={onlineLogoWhite}
       hoverIconRight={onlineLogo}
-    >Button with icon</IconButton>
+    >Button with icon
+    </IconButton>
   ))
   .add('as LoginButton', () => (
-    <LoginButton handleLogin={action('clicked')} />
-  ))
+    <LoginButton onClick={action('clicked')} />
+  ));
