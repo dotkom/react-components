@@ -4,7 +4,7 @@ This is a collection of reusable react components.
 
 ## How to use
 
-Install the package (todo)
+Install the package `npm install @dotkomonline/react-components`.
 
 Import a component directly
 `import { Button } from 'package/Buttons'`
