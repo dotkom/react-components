@@ -18,3 +18,12 @@ pipeline:
     group: testing
     commands:
       - yarn lint
+
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    pull: true
+    rebuild: true
+    mount:
+      - ./node_modules
+    volumes:
+      - /tmp/cache/:/cache
