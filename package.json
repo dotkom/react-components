@@ -1,6 +1,6 @@
 {
   "name": "@dotkomonline/react-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react components for dotkom",
   "main": "index.js",
   "author": "Dotkom <dotkom@online.ntnu.no>",
