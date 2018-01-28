@@ -1,0 +1,29 @@
+pipeline:
+  restore-cache:
+    image: drillster/drone-volume-cache
+    pull: true
+    restore: true
+    mount:
+      - ./node_modules
+    volumes:
+      - /tmp/cache/:/cache
+  
+  setup:
+    image: node:alpine
+    commands:
+      - yarn
+  
+  lint:
+    image: node:alpine
+    group: testing
+    commands:
+      - yarn lint
+
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    pull: true
+    rebuild: true
+    mount:
+      - ./node_modules
+    volumes:
+      - /tmp/cache/:/cache

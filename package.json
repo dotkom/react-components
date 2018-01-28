@@ -7,10 +7,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --inline --hot",
     "lint": "eslint src",
-    "start": "npm run dev",
+    "start": "npm run storybook",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
