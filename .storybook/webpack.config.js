@@ -4,15 +4,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
-      },
-      {
         test: /\.(eot|ttf|woff|woff2)(\?[a-z0-9=&.]+)?$/,
         use: [
           {
