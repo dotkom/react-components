@@ -23,6 +23,12 @@ For some examples check out the ones in use for storybook:
 * [example babel config](https://github.com/dotkom/react-components/blob/master/.storybook/.babelrc)
 * [example webpack config](https://github.com/dotkom/react-components/blob/master/.storybook/webpack.config.js)
 
+Sometimes `node_modules` will be ignored from webpack transpiling, and if that's the case this package has to be excepted from that exclude.
+
+If using an exclude-clause, add this matching rule to exclude `@dotkomonline/react-components` from being excluded (double negatives are fun, right?)
+
+`exclude: /node_modules(?!\/@dotkomonline\/react-components)`
+
 ### CSS
 
 Components use [CSS modules](https://github.com/css-modules/css-modules) for styling. This requires the webpack-config to use [css-loader](https://github.com/webpack-contrib/css-loader) (for development use it's smart to use style-loader for hot-reloading).
