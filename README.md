@@ -35,3 +35,9 @@ Some suggestions for webpack loaders to use:
 
 * [url-loader](https://github.com/webpack-contrib/url-loader) for b64 strings
 * [file-loader](https://github.com/webpack-contrib/file-loader) for URIs
+
+## Release new version
+
+Read [npm version](https://docs.npmjs.com/cli/version) and [npm publish](https://docs.npmjs.com/cli/publish) for how to release. Log in to [dotkomuser](https://www.npmjs.com/~dotkomuser).
+
+We follow [semantic versioning](https://semver.org/), so make sure you bump the correct version when bumping.
