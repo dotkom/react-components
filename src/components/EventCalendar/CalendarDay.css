@@ -1,3 +1,15 @@
+.cell {
+  border: 2px solid #F0F0F0;
+  background: #FAFAFA;
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+}
+
 .day {
-  font-weight: bold;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  color: #636363;
+  font-family: sans-serif;
 }

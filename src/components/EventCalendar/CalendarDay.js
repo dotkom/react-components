@@ -5,7 +5,7 @@ import _s from './CalendarDay.css';
 class CalendarDay extends Component {
   render() {
     return (
-      <td>
+      <td className={_s.cell}>
         <span className={_s.day}>{this.props.day}</span>
       </td>  
     );
