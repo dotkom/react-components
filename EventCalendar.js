@@ -1,0 +1,1 @@
+export { default as EventCalendar } from './src/components/EventCalendar/EventCalendar';
