@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { DateTime } from 'luxon';
 
 /**
  * Returns the weekday of the first day of a month from a date object.
@@ -6,12 +6,12 @@ import moment from 'moment';
  * @returns {number} Zero indexed number between 0 and 6.
  */
 export function getFirstWeekdayOfMonth(date) {
-  /** Create moment from the date object */
-  let d = moment(date);
-  /** Set the moment to the first day of the month */
-  d = moment(d.format('YYYY-MM-01'));
-  /** Get index of first day from moment, zero-index and return */
-  return d.isoWeekday() - 1;
+  /** Create DateTime from the date object */
+  let dt = DateTime.fromJSDate(date);
+  /** Set the DateTime to the first day of the month */
+  dt = dt.minus({ day: dt.day - 1 });
+  /** Get index of first day from DateTime, zero-index and return */
+  return dt.weekday - 1;
 }
 
 /**
@@ -19,8 +19,8 @@ export function getFirstWeekdayOfMonth(date) {
  * @returns {number} Length of the given month. Number between 28 and 31.
  */
 export function getMonthLength(date) {
-  const d = moment(date);
-  return d.daysInMonth();
+  const dt = DateTime.fromJSDate(date);
+  return dt.daysInMonth;
 }
 
 /**
@@ -28,9 +28,9 @@ export function getMonthLength(date) {
  * @returns {number} Length of the month previous to the given month. Number between 28 and 31.
  */
 export function getPreviousMonthLength(date) {
-  let d = moment(date);
-  d = d.subtract(1, 'month');
-  return getMonthLength(d);
+  let dt = DateTime.fromJSDate(date);
+  dt = dt.minus({ month: 1 });
+  return getMonthLength(dt.toJSDate());
 }
 
 /**
@@ -40,11 +40,21 @@ export function getPreviousMonthLength(date) {
  * @returns {Date} Shifted Date object.
  */
 export function changeMonth(date, amount) {
-  let d = moment(date);
+  let dt = DateTime.fromJSDate(date);
   if (amount > 0) {
-    d = d.add(amount, 'month');
+    dt = dt.plus({ month: amount });
   } else if (amount < 0) {
-    d = d.subtract(Math.abs(amount), 'month');
+    dt = dt.minus({ month: Math.abs(amount) });
   }
-  return d.toDate();
+  return dt.toJSDate();
+}
+
+/**
+ * Formats a Date object to a nice formatting, e.g. 'April 2020'.
+ * @param {Date} date JavaScript Date object.
+ * @returns {string} Formated datestring.
+ */
+export function getMonthAndYear(date) {
+  const dt = DateTime.fromJSDate(date);
+  return dt.toFormat('MMMM yyyy');
 }

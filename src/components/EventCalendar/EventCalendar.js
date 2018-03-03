@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 
 import CalendarDay from './CalendarDay';
 import {
@@ -7,6 +6,7 @@ import {
   getPreviousMonthLength,
   getMonthLength,
   changeMonth,
+  getMonthAndYear,
 } from './calendarUtils';
 
 import _s from './EventCalendar.css';
@@ -104,7 +104,7 @@ class EventCalendar extends Component {
           <button className={_s.headerElement} onClick={() => this.changeMonth(-1)}>
             decrement
           </button>
-          <p className={_s.headerElement}>{moment(currentDate).format('MMMM YYYY')}</p>
+          <p className={_s.headerElement}>{getMonthAndYear(currentDate)}</p>
           <button className={_s.headerElement} onClick={() => this.changeMonth(1)}>
             increment
           </button>
