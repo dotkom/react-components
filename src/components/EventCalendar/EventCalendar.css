@@ -2,3 +2,13 @@
   border: 2px solid #F0F0F0;
   border-collapse: collapse;
 }
+
+.header {
+  margin-left: 18rem;
+}
+
+.headerElement {
+  display: inline-block;
+  margin: 2rem;
+  width: 8rem;
+}

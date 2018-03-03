@@ -6,10 +6,19 @@
   position: relative;
 }
 
+.cellDisabled {
+  border: 2px solid #E0E0E0;
+  background: #EAEAEA;
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+}
+
 .day {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
   color: #636363;
   font-family: sans-serif;
+  font-size: 12px;
 }
