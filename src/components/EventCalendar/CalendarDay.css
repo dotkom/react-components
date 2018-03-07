@@ -1,17 +1,26 @@
-.cell {
-  border: 2px solid #F0F0F0;
-  background: #FAFAFA;
+.cell, .cellDisabled {
   width: 10rem;
   height: 10rem;
   position: relative;
 }
 
+.cell {
+  background: #FAFAFA;
+  border: 2px solid #F0F0F0;
+}
+
 .cellDisabled {
-  border: 2px solid #E0E0E0;
   background: #EAEAEA;
-  width: 10rem;
-  height: 10rem;
-  position: relative;
+}
+
+.cellDisabled::after {
+  border: 2px solid #E0E0E0;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  content: '';
 }
 
 .day {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CalendarDay from './CalendarDay';
+
 import {
   getFirstWeekdayOfMonth,
   getPreviousMonthLength,
@@ -102,13 +103,16 @@ class EventCalendar extends Component {
       <div>
         <div className={_s.header}>
           <button className={_s.headerElement} onClick={() => this.changeMonth(-1)}>
-            decrement
+            &lt;
           </button>
+          
           <p className={_s.headerElement}>{getMonthAndYear(currentDate)}</p>
+          
           <button className={_s.headerElement} onClick={() => this.changeMonth(1)}>
-            increment
+            &gt;
           </button>
         </div>
+        
         {calendar.length ?
           <table className={_s.eventCalendar}>
             <tbody>
